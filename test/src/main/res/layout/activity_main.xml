@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent"
+                                                 android:fitsSystemWindows="true"
+                                                 tools:context="com.test.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:orientation="vertical">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center">
+            <Button android:id="@+id/file" android:layout_width="60dp" android:layout_height="60dp"
+                    android:text="file"/>
+            <Button android:id="@+id/mb" android:layout_width="60dp" android:layout_height="60dp" android:text="mb"/>
+            <Button android:id="@+id/mf" android:layout_width="60dp" android:layout_height="60dp" android:text="mf"/>
+            <Button android:id="@+id/f_mb" android:layout_width="60dp" android:layout_height="60dp"
+                    android:text="f-mb"/>
+            <Button android:id="@+id/f_mf" android:layout_width="60dp" android:layout_height="60dp"
+                    android:text="f-mf"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center">
+            <Button android:id="@+id/test_mmap" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="test_mmap"/>
+            <Button android:id="@+id/test_bytes" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="test_bytes"/>
+            <Button android:id="@+id/upload" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="upload"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center">
+            <Button android:id="@+id/snappycompress" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="snappycompress"/>
+            <Button android:id="@+id/filecopy" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="filecopy"/>
+            <Button android:id="@+id/gzipcompress" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gzipcompress"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_gravity="center">
+
+            <Button android:id="@+id/snappyUncompress" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="snappyUncompress"/>
+            <Button android:id="@+id/gzipUncompress" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="gzipUncompress"/>
+        </LinearLayout>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/archive"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_dialog_email"/>
+
+</android.support.design.widget.CoordinatorLayout>

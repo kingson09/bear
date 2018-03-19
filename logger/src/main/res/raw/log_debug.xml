@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Recorders>
+    <recorder name="logger">
+        <LevelFilter name="logLevel" class="com.yishun.log.filter.LevelFilter" level="TRACE" onMatch="ACCEPT"
+                     onMismatch="DENY">
+        </LevelFilter>
+        <Appenders name="logcat" class="com.yishun.log.appender.LogcatAppender">
+            <LevelFilter name="logcatLevel" class="com.yishun.log.filter.LevelFilter" level="OFF" onMatch="ACCEPT"
+                         onMismatch="DENY">
+            </LevelFilter>
+        </Appenders>
+        <Appenders name="file" archiveDir="${appdir}/archive" async="true"
+                   class="com.yishun.log.appender.archive.RollingFileAppender"
+                   fileName="${appdir}/app.log">
+            <LevelFilter name="fileLevel" class="com.yishun.log.filter.LevelFilter" level="TRACE" onMatch="ACCEPT"
+                         onMismatch="DENY"/>
+            <Formatter name="formatter" class="com.yishun.log.format.DefaultLogFormatter"/>
+            <Header name="header" class="com.yishun.log.format.LogfileHeader">
+                <header>
+                    {"device":"${device}","channel":"${channel}","uid":"${uid}","product":"${product}","platform":"${platform}","logLevel":"${logLevel}","appCode":"${appCode}"}
+                </header>
+            </Header>
+            <Strategy name="timeAndSizeStrategy"
+                      class="com.yishun.log.appender.archive.strategy.TimeAndSizeBasedArchiveAndRolloverStrategy"
+                      expire="7d" interval="1d" maxSize="200MB" size="5MB"/>
+        </Appenders>
+    </recorder>
+</Recorders>
