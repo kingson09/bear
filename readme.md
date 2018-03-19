@@ -7,7 +7,7 @@ java 实现的android日志工具，可通过xml配置，可插拔式扩展，�
 PersistenceMappedByteBuffer是使用MappedByteBuffer封装的具有进程被杀不会丢失内存数据功能的ByteBuffer，非常适合app作为ByteBuffer使用，使用MappedByteBuffer的头4个字节记录
 buffer的position，每次更新buffer的数据都会更新头四个字节的position信息，对外部提供的接口和ByteBuffer相同，具体实现如图，细节参见源代码
 
-![image](https://github.com/kingson09/bear/blob/dev_stable/buffer.png)
+![image](https://github.com/kingson09/bear/blob/master/resources/buffer.png)
 
 MappedBufferedOutputStream是使用PersistenceMappedByteBuffer作为buffer的缓冲字节输出流，api和BufferedOutputStream相同，由于使用PersistenceMappedByteBuffer所以同样具有app结束不会丢失数据的功能
 
